@@ -11,6 +11,10 @@ import { NoteComponent } from './note/note.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChipViewComponent } from './chip-view/chip-view.component';
 import { AppColorComponent } from './app-color/app-color.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { MatDialogModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { AppColorComponent } from './app-color/app-color.component';
     NoteGridComponent,
     NoteComponent,
     ChipViewComponent,
-    AppColorComponent
+    AppColorComponent,
+    ConfirmationDialogComponent,
+    EditDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +37,12 @@ import { AppColorComponent } from './app-color/app-color.component';
     MatButtonModule,
     MatChipsModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ConfirmationDialogComponent]
 })
 export class AppModule { }

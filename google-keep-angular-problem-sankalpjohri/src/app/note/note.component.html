@@ -16,7 +16,7 @@
     <h4>Checklist</h4>
   </mat-card-content>
   <mat-card-actions align="center">
-    <button mat-button>Edit</button>
-    <button mat-button>Delete</button>
+    <button mat-button (click)="openEditDialog()">Edit</button>
+    <button mat-button (click)="openConfirmationDialog()">Delete</button>
   </mat-card-actions>
 </mat-card>

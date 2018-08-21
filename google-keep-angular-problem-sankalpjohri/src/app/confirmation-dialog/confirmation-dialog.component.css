@@ -1,0 +1,17 @@
+h2 {
+  font-family: 'Raleway', sans-serif;
+  color: #1da8d5;
+  text-align: center;
+  width: fit-content;
+}
+
+.dialog {
+  font-family: 'Raleway', sans-serif;
+  color: #1da8d5
+}
+
+button {
+  color: #ffffff;
+  background-color: #35dcca;
+  margin: 1%;
+}
