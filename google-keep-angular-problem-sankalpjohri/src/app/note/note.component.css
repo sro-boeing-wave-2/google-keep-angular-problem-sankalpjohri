@@ -1,0 +1,32 @@
+.example-card {
+  max-width: 33vw;
+  max-height: 400px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+  color: #7c838b;
+}
+
+.label-chip {
+  display: inline-block;
+}
+
+.pin-image {
+  background-size: cover;
+}
+
+.pin-icon-black {
+  fill: #1da8d5;
+}
+
+.pin-icon-white {
+  fill: grey;
+}
+
+button {
+  color: #7c838b;
+  background-color: #35dcca
+}
+
+mat-card-title, h4 {
+  color: #35dcca;
+}

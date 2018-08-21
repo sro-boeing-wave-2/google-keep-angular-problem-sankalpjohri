@@ -1,0 +1,5 @@
+<mat-grid-list class="md-padding" cols="4">
+  <mat-grid-tile *ngFor="let note of notes">
+    <app-note [note]="note"></app-note>
+  </mat-grid-tile>
+</mat-grid-list>

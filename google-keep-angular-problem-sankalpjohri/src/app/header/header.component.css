@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway');
+
+/*Defining the style for the navbar*/
+mat-toolbar {
+  background-color: black;
+  font-family: 'Raleway', sans-serif;
+}

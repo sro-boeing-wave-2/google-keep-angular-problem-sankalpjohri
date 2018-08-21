@@ -1,0 +1,22 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="pin-image">
+      <mat-icon svgIcon="pin" class="{{note.isPinned ? 'pin-icon-black' : 'pin-icon-white'}}"></mat-icon>
+    </div>
+    <mat-card-title style="vertical-align: middle;">{{note.title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{note.text}}
+    </p>
+    <h4>Labels</h4>
+    <mat-chip-list *ngFor="let label of note.labels" class="label-chip">
+      <app-chip-view [text]="label.text"></app-chip-view>
+    </mat-chip-list>
+    <h4>Checklist</h4>
+  </mat-card-content>
+  <mat-card-actions align="center">
+    <button mat-button>Edit</button>
+    <button mat-button>Delete</button>
+  </mat-card-actions>
+</mat-card>
