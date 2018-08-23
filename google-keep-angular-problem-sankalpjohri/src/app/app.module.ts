@@ -22,6 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateNoteComponent } from './create-note/create-note.component'
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material';
+import { EditNoteComponent } from './edit-note/edit-note.component';
+import { DisplayChecklistComponent } from './display-checklist/display-checklist.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { MatFormFieldModule } from '@angular/material';
     AppColorComponent,
     ConfirmationDialogComponent,
     EditDialogComponent,
-    CreateNoteComponent
+    CreateNoteComponent,
+    EditNoteComponent,
+    DisplayChecklistComponent
   ],
   imports: [
     BrowserModule,

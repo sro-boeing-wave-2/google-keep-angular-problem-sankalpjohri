@@ -39,3 +39,6 @@
     <button mat-button (click)="cardStateDeleteCancel()" class="dialog-button">Cancel</button>
   </mat-card-actions>
 </mat-card>
+<mat-card *ngIf="!stateDelete && stateEdit" class="delete-card">
+
+</mat-card>
