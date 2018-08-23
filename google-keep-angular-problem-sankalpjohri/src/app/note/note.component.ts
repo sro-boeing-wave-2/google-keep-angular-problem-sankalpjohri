@@ -1,9 +1,10 @@
-import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
-import { MatDialog, MatDialogRef } from '@angular/material';
-import { Input } from '@angular/core';
+import { Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
+import { NoteManagementService } from 'src/app/note-management.service'
+import { EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-note',
@@ -13,8 +14,12 @@ import { MatIconRegistry } from '@angular/material';
 export class NoteComponent implements OnInit {
 
   @Input() note;
+  @Output() deleteEmitter = new EventEmitter();
+  public stateDelete = false;
+  public stateEdit = false;
 
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, public dialog: MatDialog) {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,
+    private _noteService: NoteManagementService) {
     iconRegistry.addSvgIcon(
       'pin',
       sanitizer.bypassSecurityTrustResourceUrl('assets/images/pin.svg'));
@@ -24,19 +29,32 @@ export class NoteComponent implements OnInit {
     console.log(window.location.pathname)
   }
 
-  openConfirmationDialog() {
-    let dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      position: "center"
+  cardStateDelete() {
+    this.stateDelete = true;
+    console.log("State Delete: " + this.stateDelete);
+  }
+
+  cardStateDeleteCancel() {
+    this.stateDelete = false;
+    console.log("State Delete: " + this.stateDelete);
+  }
+
+  cardStateDeleteConfirm() {
+    this.note.isPinned = true;
+    this._noteService.deleteNote(this.note.id).subscribe(result => {
+      this.deleteEmitter.emit("success");
     });
-    console.log(this.dialog);
-    console.log(this.dialogRef);
-    this.dialogRef.afterClosed().subscribe(result => {
-      if (result === "confirmed") {
-        console.log("Note deleted successfully.")
-      } else if (result === "cancelled") {
-        console.log("Operation Cancelled")
-      }
+  }
+
+  changePinnedState() {
+    this.note.isPinned = !this.note.isPinned;
+    this._noteService.editNote(this.note).subscribe(result => {
+      this.deleteEmitter.emit("success");
     });
+  }
+
+  editNote() {
+    this.stateEdit = true;
   }
 
 }

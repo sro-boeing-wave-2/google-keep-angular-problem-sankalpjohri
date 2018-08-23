@@ -2,6 +2,18 @@
 
 /*Defining the style for the navbar*/
 mat-toolbar {
-  background-color: black;
+  background-color: #1da8d5;
+  color: #ffffff;
+  text-decoration: none;
   font-family: 'Raleway', sans-serif;
+}
+
+a:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #ffffff;
+  text-decoration: none;
 }

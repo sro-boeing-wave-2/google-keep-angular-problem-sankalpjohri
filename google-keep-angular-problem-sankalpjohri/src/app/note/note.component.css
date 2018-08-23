@@ -6,6 +6,14 @@
   color: #7c838b;
 }
 
+.delete-card {
+  max-width: 33vw;
+  max-height: 400px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: #7c838b;
+}
+
 .label-chip {
   display: inline-block;
 }
@@ -22,11 +30,18 @@
   fill: grey;
 }
 
-button {
+.note-button {
   color: #7c838b;
-  background-color: #35dcca
+  background-color: #35dcca;
+  width: 100%;
 }
 
-mat-card-title, h4 {
+mat-panel-title, mat-card-title, h4 {
   color: #35dcca;
+}
+
+.dialog-button {
+  color: #7c838b;
+  background-color: #35dcca;
+  width: fit-content;
 }

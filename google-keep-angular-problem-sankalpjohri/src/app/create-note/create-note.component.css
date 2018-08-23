@@ -39,3 +39,7 @@ mat-panel-title, mat-card-title, h4, h6, h5 {
   width: 100%;
   text-align: left;
 }
+
+.chip-input {
+  width: 100%;
+}

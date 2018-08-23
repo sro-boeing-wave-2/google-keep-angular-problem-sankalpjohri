@@ -1,5 +1,8 @@
-<mat-grid-list class="md-padding" cols="4">
+<mat-grid-list class="md-padding" cols="3">
+  <mat-grid-tile>
+    <app-create-note (createEmitter)="captureCreateEvent($event)"></app-create-note>
+  </mat-grid-tile>
   <mat-grid-tile *ngFor="let note of notes">
-    <app-note [note]="note"></app-note>
+    <app-note [note]="note" (deleteEmitter)="captureDeleteEvent($event)"></app-note>
   </mat-grid-tile>
 </mat-grid-list>
